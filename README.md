@@ -60,7 +60,7 @@ However, in this case image of dog and cat will be rendered on the same slide an
 
 It's easy to use. Just use it. Each child that has to be rendered on a slide should have slideItem class. To show multiple elements on the same slide, they have to be encapsulated in divs. 
 
-The props of slidesDisplay dictates how many slides are shown at the same time.
+The props of slidesDisplay dictates how many slides are shown at the same time. By default it is set to 1.
 
 ```javascript
 const App = () => {
