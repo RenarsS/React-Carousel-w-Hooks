@@ -1,4 +1,4 @@
-# React-Carousel-w-Hooks
+# React-Carousel-w-Hooks-v2
 
 This React Carousel was made using hooks and supports:
 
