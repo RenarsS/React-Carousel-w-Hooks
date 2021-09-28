@@ -51,11 +51,10 @@ const Slider = ({children, slidesDisplay}) => {
 
     const handleUp = () => {
         setPress(false)
-        if((position) <= 0){
-            setCurrent(Math.abs(Math.round(position/(screenWidth/slidesDisplay))));
-        }
+        if((position) <= 0 && Math.abs(Math.round(position/(screenWidth/slidesDisplay))) < children.length ){
+                setCurrent(Math.abs(Math.round(position/(screenWidth/slidesDisplay))));
+            }
     };
-
     useEffect(() => {
         setBase((screenWidth * children.length)/slidesDisplay);
         setCount(children.length);
@@ -114,7 +113,7 @@ const Slider = ({children, slidesDisplay}) => {
                  onTouchMove={handleMove}
                  onTouchEnd={handleUp}
                 >
-                {children.map((child) => <div className={css(style.slide)}>{child}</div>)}
+                {children.map((child) => <div key={children.indexOf(child)} className={css(style.slide)}>{child}</div>)}
             </div>
         </>
     );

@@ -29,8 +29,8 @@ const Indicator = () => {
 
     if (slidesCount !== 0){
         for (let i = 0; i <slidesCount; i++) {
-            indicators.push(<div className={css(style.indicator, i === currentSlide ? style.currentIndicator : "")} onClick={()=>setCurrent(i)}/>);
-        };
+            indicators.push(<div key={i} className={css(style.indicator, i === currentSlide ? style.currentIndicator : "")} onClick={()=>setCurrent(i)}/>);
+        }
 
         return (
             <div className={css(style.indicatorBox)}>
