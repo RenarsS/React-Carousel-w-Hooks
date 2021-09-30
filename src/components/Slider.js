@@ -61,15 +61,6 @@ const Slider = ({children, slidesDisplay}) => {
 
     },[screenWidth]);
 
-    useEffect(()=>{
-        let slider = document.getElementsByClassName("base");
-
-        slider[0].addEventListener("animationend", ()=> {
-            setPosition(-currentSlide*(screenWidth/slidesDisplay))
-        }, true);
-
-    }, [currentSlide]);
-
 
     const translateKeyFrames = {
         'from': {
@@ -112,6 +103,7 @@ const Slider = ({children, slidesDisplay}) => {
                  onTouchStart={handlePress}
                  onTouchMove={handleMove}
                  onTouchEnd={handleUp}
+                 onAnimationEnd={() => { setPosition(-currentSlide*(screenWidth/slidesDisplay)) }}
                 >
                 {children.map((child) => <div key={children.indexOf(child)} className={css(style.slide)}>{child}</div>)}
             </div>
