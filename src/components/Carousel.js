@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import Slider from "./Slider";
 import Indicator from "./Indicator";
 import Screen from "./Screen";
